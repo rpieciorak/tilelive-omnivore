@@ -13,6 +13,7 @@ module.exports = Omnivore;
 function Omnivore(uri, callback) {
   uri = url.parse(uri, true);
   var files = uri.pathname.split(',');
+  var format = uri.query.format ? decodeURI(uri.query.format) : null;
   var layerName = uri.query.layerName ? decodeURI(uri.query.layerName) : null;
   var omnivore = this;
 
@@ -27,6 +28,7 @@ function Omnivore(uri, callback) {
           return next('Only 8 bit TIFFs are supported');
         }
         metadata.filepath = filepath;
+        metadata.rasterFormat = format;
         next(null, metadata);
       });
     });
@@ -40,7 +42,7 @@ function Omnivore(uri, callback) {
     catch (err) {
       return callback(err);
     }
-    new Bridge({ xml: mapnikXml }, setBridge);
+    new Bridge({ xml: mapnikXml, format: format }, setBridge);
   });
 
 
@@ -59,7 +61,6 @@ Omnivore.registerProtocols = function(tilelive) {
 
 Omnivore.getXml = function(metadata, layerName) {
   var override;
-
   if (Array.isArray(metadata)) {
     if (metadata.length > 1) {
       if (!metadata.every(function(md) { return md.filetype === '.geojson'; })) {
@@ -71,7 +72,7 @@ Omnivore.getXml = function(metadata, layerName) {
   if (layerName && metadata[0].layers.length === 1 && metadata.length === 1) override = true;
 
   var finalMetadata = {
-    format: metadata[0].dstype === 'gdal' ? 'webp' : 'pbf',
+    format: metadata[0].dstype === 'gdal' ? (metadata[0].rasterFormat || 'webp') : 'pbf',
     layers: [],
     filesize: 0,
     center: metadata[0].center,

@@ -282,3 +282,17 @@ test('[bin/mapnik-omnivore] runs on a relative file path', function(assert) {
     })
     .stderr.pipe(process.stdout);
 });
+
+test('format parameter read from source uri', function(assert) {
+  var uri = 'omnivore://' + datasets.tif + '?format=png';
+  new Omnivore(uri, function(err, omnivore) {
+    var xml = omnivore.bridge._uri.xml;
+    assert.equal(
+      xml.match(/Parameter name="format">png<\/Parameter/g).length,
+      1,
+      'correctly change format parameter in xml'
+    );
+    assert.end();
+  }); 
+});
+

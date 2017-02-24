@@ -1,4 +1,7 @@
 # Changelog
+## 3.1.2-sg
+
+- Support format parameter for raster sources (uri?format=png)
 
 ## 3.1.2
 
