@@ -1,5 +1,5 @@
 {
-  "name": "@mapbox/tilelive-omnivore",
+  "name": "tilelive-omnivore",
   "version": "3.1.2-sg",
   "description": "Implements the tilelive API for a variety of raw data formats",
   "main": "index.js",
