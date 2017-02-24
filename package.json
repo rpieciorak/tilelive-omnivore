@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mapbox/tilelive-omnivore.git"
+    "url": "git://github.com/rpieciorak/tilelive-omnivore.git"
   },
   "author": "Mapbox",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mapbox/tilelive-omnivore/issues"
+    "url": "https://github.com/rpieciorak/tilelive-omnivore/issues"
   },
-  "homepage": "https://github.com/mapbox/tilelive-omnivore",
+  "homepage": "https://github.com/rpieciorak/tilelive-omnivore",
   "dependencies": {
     "@mapbox/mapnik-omnivore": "~8.2.2",
     "@mapbox/tilelive-bridge": "~2.3.1",
