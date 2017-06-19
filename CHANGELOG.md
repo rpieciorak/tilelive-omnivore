@@ -1,7 +1,20 @@
 # Changelog
+## 3.3.0-sg
+- Pull changes from upstream
+
 ## 3.1.2-sg
 
 - Support format parameter for raster sources (uri?format=png)
+
+## 3.3.0
+
+- Upgraded to use mapnik 3.6.0
+- Update tilelive to @mapbox NPM namespace
+
+## 3.2.0
+
+- Upgraded to mapnik-omnivore@8.3.0 (includes new CSV error handling & feature-specific zoom levels)
+- Update other dependencies to @mapbox NPM namespace
 
 ## 3.1.2
 
