@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/rpieciorak/tilelive-omnivore",
   "dependencies": {
-    "@mapbox/mapnik-omnivore": "git+https://github.com/rpieciorak/mapnik-omnivore.git",
+    "@mapbox/mapnik-omnivore": "git+https://github.com/rpieciorak/mapnik-omnivore.git#dynamic-vector-min-zoom",
     "@mapbox/tilelive-bridge": "git+https://github.com/rpieciorak/tilelive-bridge.git",
     "queue-async": "^1.0.7",
     "underscore": "^1.7.0"
