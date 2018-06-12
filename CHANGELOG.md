@@ -1,5 +1,13 @@
 # Changelog
+
+## 4.0.0-smartgeomatic.1
+
+- using mapnik 3.7.0
+- Update to tilelive-bridge 3.0.0-smartgeomatic.1
+- Update to mapnik-omnivore 9.0.0-smartgeomatic.1
+
 ## 3.3.0-sg
+
 - Pull changes from upstream
 
 ## 3.1.2-sg
